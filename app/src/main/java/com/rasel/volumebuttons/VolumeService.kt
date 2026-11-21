@@ -14,6 +14,7 @@ class VolumeService : AccessibilityService() {
     private var bubble: Bubble? = null
 
     override fun onServiceConnected() {
+        KeepOn.stop()
         bubble = Bubble(this).also { it.show() }
     }
 
@@ -25,6 +26,8 @@ class VolumeService : AccessibilityService() {
     override fun onUnbind(intent: Intent?): Boolean {
         bubble?.hide()
         bubble = null
+        // Switched off (vivo does this when Settings opens): switch it back on.
+        KeepOn.watch(this)
         return super.onUnbind(intent)
     }
 

@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Only works once granted over USB (see README). Then opening the app
-         turns the bubble back on after a force stop switched it off. -->
+    <!-- Only works once granted over USB (see README). Lets the app switch
+         the bubble back on when the phone switches it off, and when opened
+         after a force stop. -->
     <uses-permission
         android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="false"
@@ -42,5 +44,14 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/volume_service" />
         </service>
+
+        <receiver
+            android:name=".StartReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
