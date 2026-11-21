@@ -31,8 +31,18 @@ Tested on a vivo Y15s (Android 12 Go):
 | App crash | Android restarts it |
 | Memory cleaners, deep sleep (Doze), battery saver | Keeps running; Android ranks it like a visible app |
 | App update | Comes back by itself |
+| Screen off for minutes | Keeps running, **once vivo is told not to restrict it** (below) |
 | Another app's permission pop-up | Gone for 5–15 s: the phone switches all accessibility services off while the pop-up shows, then back on |
+| vivo i Manager open | Gone while i Manager is on screen (same guard); back about 9 s after leaving it |
 | **Force stop** | **Switched off** by Android: open the app to bring it back |
+
+### vivo: don't let it be restricted
+
+With the default "Smart control", vivo force-stops the app while the screen is off or while i Manager cleans up. Set:
+
+**Settings → Battery → Background power consumption management → Volume Buttons → Don't restrict background power usage**
+
+The bubble uses no measurable battery in the background (0.0 mAh a day there).
 
 To make opening the app enough after a force stop (without going through Accessibility settings), grant this permission once over USB:
 
