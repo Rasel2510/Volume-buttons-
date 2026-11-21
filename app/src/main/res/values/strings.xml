@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Volume Buttons</string>
+    <string name="service_description">Shows a small see-through bubble over every app. Tap it for the volume controls, for phones whose volume keys don\'t work. It doesn\'t read the screen or anything you type.</string>
+
+    <string name="intro">A see-through bubble over every app. Tap it for the volume controls; drag it to move it.</string>
+    <string name="status_on">The bubble is on.</string>
+    <string name="status_off">The bubble is off. Tap Turn on, find Volume Buttons in the list (it may be under Downloaded apps or Installed services) and switch it on.</string>
+    <string name="turn_on">Turn on</string>
+    <string name="accessibility_settings">Accessibility settings</string>
+    <string name="tip">If the bubble goes away on its own: Settings → Battery → Background power consumption management → Volume Buttons → allow it. Then turn it on again here.</string>
+</resources>

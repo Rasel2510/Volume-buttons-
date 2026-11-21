@@ -1,0 +1,14 @@
+<resources>
+    <color name="background">#121212</color>
+    <color name="card">#22262B</color>
+    <color name="accent">#8AB4F8</color>
+
+    <style name="Theme.VolumeButtons" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:colorPrimary">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

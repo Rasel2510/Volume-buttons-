@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Asks for no events and no screen content: the service only draws the bubble. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/service_description"
+    android:isAccessibilityTool="true" />
