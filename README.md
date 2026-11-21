@@ -21,7 +21,23 @@ Open **Volume Buttons**, tap **Turn on**, find Volume Buttons in the list (it ma
 
 The bubble runs as an accessibility service. That way Android keeps it running and starts it again after a restart. It also lets the bubble draw over other apps without the "Display over other apps" permission, which Android Go phones don't have. The service reads no screen content and receives no events.
 
-## If the bubble goes away (vivo and similar phones)
+## What it survives
 
-- Settings → Battery → Background power consumption management → Volume Buttons → allow.
-- Don't force-stop the app. A force stop makes Android switch the service off, and it must be turned on again.
+Tested on a vivo Y15s (Android 12 Go):
+
+| Event | Bubble |
+|---|---|
+| Phone restart | Comes back by itself about 3 s after unlocking |
+| App crash | Android restarts it |
+| Memory cleaners, deep sleep (Doze), battery saver | Keeps running; Android ranks it like a visible app |
+| App update | Comes back by itself |
+| Another app's permission pop-up | Gone for 5–15 s: the phone switches all accessibility services off while the pop-up shows, then back on |
+| **Force stop** | **Switched off** by Android: open the app to bring it back |
+
+To make opening the app enough after a force stop (without going through Accessibility settings), grant this permission once over USB:
+
+```
+adb shell pm grant com.rasel.volumebuttons android.permission.WRITE_SECURE_SETTINGS
+```
+
+The grant stays through updates but not through uninstalling.
